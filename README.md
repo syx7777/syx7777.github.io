@@ -5,10 +5,10 @@ Personal academic website built with Academic Pages, hosted at https://syx7777.g
 ## 日常修改
 
 - `_config.yml`：姓名、邮箱、单位、侧栏简介和网站地址。
-- `_pages/about.md`：首页介绍、研究方向和教育经历。
+- `_pages/home.md`：首页介绍、研究方向和教育经历。
 - `_pages/cv.md`：简历。
 - `_data/navigation.yml`：顶部导航。
-- `images/profile.png`：头像。
+- `images/profile.webp`：头像。
 
 ## 添加项目
 
@@ -26,7 +26,7 @@ Personal academic website built with Academic Pages, hosted at https://syx7777.g
 
 ```powershell
 chcp 65001 > $null
-git add _config.yml _data/navigation.yml _pages/about.md _pages/cv.md _pages/portfolio.html _includes/projects-list.html _portfolio _drafts/project-template.md README.md images/profile.png
+git add _config.yml _data/navigation.yml _pages/home.md _pages/cv.md _pages/portfolio.html _includes/projects-list.html _portfolio _drafts/project-template.md README.md images/profile.webp
 git commit -m "Personalize homepage and prepare project portfolio"
 git push origin master
 ```

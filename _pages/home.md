@@ -2,9 +2,6 @@
 permalink: /
 title: "About Me"
 author_profile: true
-redirect_from:
-  - /about/
-  - /about.html
 ---
 
 I'm currently a Master's student in Artificial Intelligence at Zhejiang University and a member of [Eagle-Lab](https://eagle.zju.edu.cn/team-detail?2026suyongxin), where I conduct research under the guidance of Dr. Sheng Zhou.
