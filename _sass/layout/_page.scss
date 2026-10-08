@@ -55,6 +55,10 @@
     border-bottom: 1px solid var(--global-border-color);
   }
 
+  h2.homepage-section-title {
+    font-size: $type-size-3;
+  }
+
   p, li, dl {
     font-size: 1em;
   }

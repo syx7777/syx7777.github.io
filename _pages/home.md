@@ -12,6 +12,7 @@ My primary research areas include:
 - **Agentic AI**
 
 ## Education
+{: .homepage-section-title}
 
 **M.E. in Artificial Intelligence**<br>
 Zhejiang University, Hangzhou, China<br>
@@ -23,5 +24,6 @@ Sep 2022 – Jun 2026<br>
 GPA: **3.91 / 4.0** · Rank: **1 / 59**
 
 ## Projects
+{: .homepage-section-title}
 
 {% include projects-list.html %}
