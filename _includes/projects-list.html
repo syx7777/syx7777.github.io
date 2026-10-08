@@ -1,0 +1,9 @@
+{% include base_path %}
+{% assign projects = site.portfolio | sort: "date" | reverse %}
+{% if projects.size > 0 %}
+  {% for post in projects %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% else %}
+  <p>Projects will be added here soon.</p>
+{% endif %}

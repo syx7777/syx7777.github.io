@@ -1,3 +1,47 @@
+# Yongxin Su — Personal Website
+
+Personal academic website built with Academic Pages, hosted at https://syx7777.github.io.
+
+## 日常修改
+
+- `_config.yml`：姓名、邮箱、单位、侧栏简介和网站地址。
+- `_pages/about.md`：首页介绍、研究方向和教育经历。
+- `_pages/cv.md`：简历。
+- `_data/navigation.yml`：顶部导航。
+- `images/profile.png`：头像。
+
+## 添加项目
+
+1. 将 `_drafts/project-template.md` 复制为 `_portfolio/your-project.md`。
+2. 填写 `title`、`date`、`excerpt` 和正文，将 `permalink` 改为唯一地址，例如 `/project/your-project/`。
+3. 将 `published: false` 改为 `published: true`，并填写真实的代码仓库链接。
+4. 可将配图放入 `images/`，在正文中用 `![说明](/images/your-project.png)` 引用。
+5. 提交并推送后，项目会自动出现在首页、Projects 页面和 CV 中，按日期倒序排列。
+
+首页和 Projects 页面共用 `_includes/projects-list.html`，不用手动维护两份项目列表。
+
+## 发布
+
+在 PowerShell 7 中进入仓库后执行：
+
+```powershell
+chcp 65001 > $null
+git add _config.yml _data/navigation.yml _pages/about.md _pages/cv.md _pages/portfolio.html _includes/projects-list.html _portfolio _drafts/project-template.md README.md images/profile.png
+git commit -m "Personalize homepage and prepare project portfolio"
+git push origin master
+```
+
+GitHub Pages 使用 `master` 分支和根目录。可在仓库 Actions 中查看发布结果。
+
+## 暂不展示的内容
+
+论文、报告、教学、博客和模板指南已在 `_config.yml` 中排除，原始模板文件保留供以后参考。
+以后需要论文页面时，移除 `_publications` 与 `_pages/publications.html` 的排除项，将 `collections.publications.output` 改为 `true`，先删除或替换示例论文，再添加导航。
+
+---
+
+以下保留 Academic Pages 原始说明与署名。
+
 # Academic Pages
 **Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
 

@@ -7,58 +7,31 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Yongxin Su
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+Master's student in Artificial Intelligence at Zhejiang University.<br>
+Email: [22651296@zju.edu.cn](mailto:22651296@zju.edu.cn) · [GitHub](https://github.com/syx7777)
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Education
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+**M.E. in Artificial Intelligence**<br>
+Zhejiang University, Hangzhou, China<br>
+Sep 2026 – Present
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+**B.E. in Computer Science**<br>
+Tiangong University, Tianjin, China<br>
+Sep 2022 – Jun 2026<br>
+GPA: **3.91 / 4.0** · Rank: **1 / 59**
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Research
+
+Member of [Eagle-Lab](https://eagle.zju.edu.cn/team-detail?2026suyongxin), conducting research under the guidance of Dr. Sheng Zhou.
+
+- **LLMs for Graph**
+- **Agentic AI**
+
+{% if site.portfolio.size > 0 %}
+## Projects
+
+{% include projects-list.html %}
+{% endif %}
