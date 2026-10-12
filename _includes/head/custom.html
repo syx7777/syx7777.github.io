@@ -19,4 +19,9 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="var(--global-bg-color)"/>
 
+<!-- Apply the stored or browser-preferred language before first paint -->
+<script>
+(function(){var l;try{l=localStorage.getItem("lang")}catch(e){}if(l!=="zh"&&l!=="en"){var n=(navigator.language||navigator.userLanguage||"en").toLowerCase();l=n.indexOf("zh")===0?"zh":"en"}document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l==="zh"?"zh-CN":"en")})();
+</script>
+
 <!-- end custom head snippets -->

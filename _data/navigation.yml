@@ -1,6 +1,8 @@
 main:
-  - title: "Projects"
+  - title_en: "Projects"
+    title_zh: "项目"
     url: /projects/
 
-  - title: "CV"
+  - title_en: "CV"
+    title_zh: "简历"
     url: /cv/

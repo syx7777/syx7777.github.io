@@ -11,3 +11,6 @@ end
 
 gem 'github-pages'
 gem 'connection_pool', '2.5.0'
+
+# Provides zoneinfo data for tzinfo on Windows (a no-op where the OS supplies it).
+gem 'tzinfo-data'

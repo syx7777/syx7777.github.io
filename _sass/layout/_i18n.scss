@@ -1,0 +1,22 @@
+/* ==========================================================================
+   LANGUAGE TOGGLE (i18n)
+   ========================================================================== */
+
+/*
+ * Client-side Chinese/English switching. Both languages are rendered into the
+ * DOM and only one is shown, based on the data-lang attribute set on <html>.
+ * Default (attribute absent, or data-lang="en") shows English. Only the hidden
+ * side is targeted so that block vs. inline display is preserved.
+ */
+
+html[data-lang="zh"] .lang-en {
+  display: none !important;
+}
+
+html:not([data-lang="zh"]) .lang-zh {
+  display: none !important;
+}
+
+#lang-toggle a {
+  cursor: pointer;
+}

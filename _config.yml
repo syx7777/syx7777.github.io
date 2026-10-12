@@ -10,8 +10,10 @@
 locale                   : "en-US"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Yongxin Su"
+title_zh                 : "苏甬新"
 title_separator          : "-"
 name                     : &name "Yongxin Su"
+name_zh                  : "苏甬新"
 description              : &description "Master's student in Artificial Intelligence at Zhejiang University. Research interests: LLMs for Graph and Agentic AI."
 url                      : "https://syx7777.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -24,10 +26,14 @@ author:
   # Biographic information
   avatar           : "profile.webp"
   name             : "Yongxin Su"
-  pronouns         : # example: "she/her"  
+  name_zh          : "苏甬新"
+  pronouns         : # example: "she/her"
   bio              : "Master Student in Artificial Intelligence"
+  bio_zh           : "人工智能硕士研究生"
   location         : "Hangzhou, China"
+  location_zh      : "中国 杭州"
   employer         : "Zhejiang University"
+  employer_zh      : "浙江大学"
   uri              : # URL
   email            : "22651296@zju.edu.cn"
 
