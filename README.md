@@ -13,12 +13,19 @@ Personal academic website built with Academic Pages, hosted at https://syx7777.g
 ## 添加项目
 
 1. 将 `_drafts/project-template.md` 复制为 `_portfolio/your-project.md`。
-2. 填写 `title`、`date`、`excerpt` 和正文，将 `permalink` 改为唯一地址，例如 `/project/your-project/`。
-3. 将 `published: false` 改为 `published: true`，并填写真实的代码仓库链接。
-4. 可将配图放入 `images/`，在正文中用 `![说明](/images/your-project.png)` 引用。
-5. 提交并推送后，项目会自动出现在首页、Projects 页面和 CV 中，按日期倒序排列。
+2. 填写 `title`、`title_zh`、`date`、`excerpt`（及可选的 `excerpt_zh`）和正文，将 `permalink` 改为唯一地址，例如 `/project/your-project/`。
+3. 可选地在 front matter 里补充：
+   - `tech: ["Python", "LangGraph"]` —— 卡片上的技术栈标签。
+   - `metrics` —— 卡片上的成果数字，例如 `- value: "↓53.4%"` 配 `label` / `label_zh`。
+   - `featured: true` —— 给卡片加左侧强调色边框（不显示文字角标）。
+   - `simple: true` —— 只显示名称和 GitHub 链接的轻量条目（此时正文可留空）。
+4. 将 `published: false` 改为 `published: true`，并填写真实的代码仓库链接 `githuburl`。
+5. 可将配图放入 `images/`，在正文中用 `![说明](/images/your-project.png)` 引用。
+6. 提交并推送后，项目会自动出现在首页、Projects 页面和 CV 中，按日期倒序排列。
 
-首页和 Projects 页面共用 `_includes/projects-list.html`，不用手动维护两份项目列表。
+首页、Projects 页面和 CV 页共用 `_includes/projects-list.html`，不用手动维护三份项目列表。
+
+> **注意**：`_includes/project-card.html` 与 `projects-list.html` 里的 HTML 必须顶格写（缩进不超过 3 个空格）。这两个 include 会被插入 Markdown 页面，kramdown 会把缩进 4 格以上的行当成代码块。
 
 ## 发布
 
@@ -26,7 +33,7 @@ Personal academic website built with Academic Pages, hosted at https://syx7777.g
 
 ```powershell
 chcp 65001 > $null
-git add _config.yml _data/navigation.yml _pages/home.md _pages/cv.md _pages/portfolio.html _includes/projects-list.html _portfolio _drafts/project-template.md README.md images/profile.webp
+git add _config.yml _data/navigation.yml _pages/home.md _pages/cv.md _pages/portfolio.html _includes/projects-list.html _includes/project-card.html _sass/layout/_project-cards.scss _portfolio _drafts/project-template.md README.md images/profile.webp
 git commit -m "Personalize homepage and prepare project portfolio"
 git push origin master
 ```

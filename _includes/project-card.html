@@ -1,0 +1,54 @@
+{%- comment -%}
+Project card for the portfolio collection. Renders either a full card (excerpt,
+tech tags, metrics, links to the detail page) or a compact card when the post
+sets `simple: true`. Called from projects-list.html, which passes `post`.
+
+Every HTML line starts at column 0 on purpose: this markup is injected into a
+Markdown page, and kramdown turns any line indented four or more spaces into a
+code block.
+{%- endcomment -%}
+{% include base_path %}
+{% if include.post.simple %}
+<div class="project-card project-card--simple">
+<h3 class="project-card__title">
+<a href="{{ include.post.githuburl | default: include.post.url }}" rel="permalink">{{ include.post.title }}</a>
+</h3>
+{% if include.post.githuburl %}
+<a class="project-card__link" href="{{ include.post.githuburl }}"><i class="fab fa-github" aria-hidden="true"></i> {% include i18n.html en="Code" zh="代码" %}</a>
+{% endif %}
+</div>
+{% else %}
+<article class="project-card{% if include.post.featured %} project-card--featured{% endif %}">
+<header class="project-card__header">
+<h2 class="project-card__title">
+<a href="{{ base_path }}{{ include.post.url }}" rel="permalink">{{ include.post.title }}</a>
+</h2>
+</header>
+{% if include.post.excerpt %}
+<p class="project-card__excerpt"><span class="lang-en">{{ include.post.excerpt }}</span> <span class="lang-zh">{{ include.post.excerpt_zh | default: include.post.excerpt }}</span></p>
+{% endif %}
+{% if include.post.tech %}
+<ul class="project-card__tech">
+{% for item in include.post.tech %}
+<li>{{ item }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if include.post.metrics %}
+<ul class="project-card__metrics">
+{% for metric in include.post.metrics %}
+<li>
+<span class="project-card__metric-value">{{ metric.value }}</span>
+<span class="project-card__metric-label"><span class="lang-en">{{ metric.label }}</span> <span class="lang-zh">{{ metric.label_zh | default: metric.label }}</span></span>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+<p class="project-card__actions">
+<a class="project-card__button" href="{{ base_path }}{{ include.post.url }}" rel="permalink">{% include i18n.html en="Details" zh="项目详情" %} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+{% if include.post.githuburl %}
+<a class="project-card__button project-card__button--ghost" href="{{ include.post.githuburl }}"><i class="fab fa-github" aria-hidden="true"></i> {% include i18n.html en="Code" zh="代码" %}</a>
+{% endif %}
+</p>
+</article>
+{% endif %}

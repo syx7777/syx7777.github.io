@@ -1,10 +1,29 @@
+{%- comment -%}
+Renders the portfolio collection: full cards for projects, plus a compact group
+for entries marked `simple: true`. Shared by the home page, /projects/ and the CV
+page. Markup starts at column 0 so kramdown does not read it as a code block.
+{%- endcomment -%}
 {% include base_path %}
 {% assign projects = site.portfolio | sort: "date" | reverse %}
 {% if projects.size > 0 %}
-  {% for post in projects %}
-    {% include archive-single.html %}
-  {% endfor %}
+{% assign featured = projects | where_exp: "p", "p.simple != true" %}
+{% assign simple = projects | where_exp: "p", "p.simple == true" %}
+{% if featured.size > 0 %}
+<div class="project-grid">
+{% for post in featured %}
+{% include project-card.html post=post %}
+{% endfor %}
+</div>
+{% endif %}
+{% if simple.size > 0 %}
+<h3 class="project-grid__subtitle">{% include i18n.html en="More Projects" zh="其他项目" %}</h3>
+<div class="project-grid project-grid--small">
+{% for post in simple %}
+{% include project-card.html post=post %}
+{% endfor %}
+</div>
+{% endif %}
 {% else %}
-  <p class="lang-en">Projects will be added here soon.</p>
-  <p class="lang-zh">项目即将上线。</p>
+<p class="lang-en">Projects will be added here soon.</p>
+<p class="lang-zh">项目即将上线。</p>
 {% endif %}
