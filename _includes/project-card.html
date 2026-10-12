@@ -49,6 +49,9 @@ code block.
 {% if include.post.githuburl %}
 <a class="project-card__button project-card__button--ghost" href="{{ include.post.githuburl }}"><i class="fab fa-github" aria-hidden="true"></i> {% include i18n.html en="Code" zh="代码" %}</a>
 {% endif %}
+{% if include.post.paperurl %}
+<a class="project-card__button project-card__button--ghost" href="{{ include.post.paperurl }}"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> {% include i18n.html en="Paper" zh="论文" %}</a>
+{% endif %}
 </p>
 </article>
 {% endif %}
